@@ -1,5 +1,7 @@
 # Ridge Top Exteriors Chrome Extension
 
+Created by Ridge Top Exteriors (Wisconsin Rapids Office): Automatically schedule follow-up calls in AccuLynx for optimized time management and profitability. The calendar will intelligently schedule follow-ups based on profitability and resource availability.
+
 Enhance your AccuLynx workflow with the Ridge Top Exteriors Chrome Extension. This extension provides a Follow-Up Scheduler to efficiently manage your follow-up activities.
 
 ## Installation
