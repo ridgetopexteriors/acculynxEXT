@@ -21,13 +21,14 @@ To install the Ridge Top Exteriors Chrome Extension, follow these simple steps:
    - Open Google Chrome.
    - In your browser's address bar, navigate to `chrome://extensions`.
    - Enable "Developer mode" using the toggle switch in the top-right corner.
-![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/ef76a825-e90f-406d-8e7c-df9e1072a8f3)
+![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/b0a3860a-a969-4ddb-b40a-42ce1ae335da)
 
 4. **Load Unpacked Extension:**
 
    - Click the "Load unpacked" button that appears after enabling Developer mode.
    - Select the folder where you unzipped the extension and click "Select Folder."
-![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/11e9ef44-7346-4926-8afe-8afd4f827aa2)
+![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/2363d945-4840-42b7-9579-56dafdea16d6)
+
 
 5. **Install Extension:**
 
@@ -46,8 +47,10 @@ To install the Ridge Top Exteriors Chrome Extension, follow these simple steps:
 ## Credits
 
 - **Coder:** Robert Belsha
-![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/9125b9b4-ae3b-4fb6-aeea-00e9e5839269)
-![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/c6e9f5fe-a98f-4527-8626-d918fb0795f2)
+![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/700f0fe7-6855-437d-ab3d-cffd2f39e0e3)
+
+![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/16e0c990-f454-458c-bcbe-a810c6f563ff)
+
 
 ## License
 
