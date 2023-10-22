@@ -8,7 +8,7 @@ To install the Ridge Top Exteriors Chrome Extension, follow these simple steps:
 
 1. **Download the Extension:**
 
-   You can download the extension from the [Ridge Top Exteriors GitHub repository](https://github.com/ridgetopexteriors/ridge-top-ext). Look for the latest release and download the extension ZIP file.
+   You can download the extension from the [Ridge Top Exteriors GitHub repository]([https://github.com/ridgetopexteriors/acculynxEXT](https://github.com/ridgetopexteriors/acculynxEXT/)). Look for the latest release and download the extension ZIP file.
 
 2. **Unzip the Extension:**
 
