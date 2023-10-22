@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Ridge Top Exteriors - Follow-Up Scheduler</title>
+  <link rel="stylesheet" type="text/css" href="popup.css">
+  <img src="wisconsinrapids.png" alt="Ridge Top Exteriors Logo" width="100">
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #000;
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 75vh; /* 75% of the viewport height */
+      overflow: hidden; /* Hide overflow to prevent scrolling */
+    }
+    .container {
+      width: 100%; /* 100% width */
+      max-width: 1500px; /* Maximum width */
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    }
+    h2 {
+      color: #ff0404; /* Red */
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    img {
+      display: block;
+      margin: 0 auto;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin: 10px 0;
+    }
+    label {
+      color: #ff0404; /* Red */
+      font-weight: bold;
+    }
+    input[type="date"],
+    select,
+    textarea {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #222222; /* Black */
+      border-radius: 4px;
+      box-sizing: border-box;
+      margin-top: 5px;
+    }
+    .radio-group label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: normal;
+    }
+    button {
+      background-color: #ff0404; /* Red */
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      padding: 10px 20px;
+      cursor: pointer;
+      display: block;
+      margin: 20px auto;
+      width: 100%;
+    }
+    button:hover {
+      background-color: #1b1b1b; /* Dark Gray */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Ridge Top Exteriors - Follow-Up Scheduler</h2>
+    
+    <img src="wisconsinrapids.png" alt="Ridge Top Exteriors Logo" width="100">
+
+    <div class="form-group">
+      <label for="followUpDate">Select Follow-Up Date:</label>
+      <input type="date" id="followUpDate" required>
+    </div>
+
+    <div class="form-group">
+      <label for="priority">Priority:</label>
+      <select id="priority">
+        <option value="high">High</option>
+        <option value="medium">Medium</option>
+        <option value="low">Low</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label for="notes">Additional Notes:</label>
+      <textarea id="notes" rows="4"></textarea>
+    </div>
+
+    <div class="form-group radio-group">
+        <label>Choose an Action:</label>
+        <input type="radio" id="scheduleFollowUp" name="action" value="follow-up" checked>
+        <label for="scheduleFollowUp">Schedule Follow-Up</label>
+        <input type="radio" id="sendMessage" name="action" value="message">
+        <label for="sendMessage">Send Message</label>
+        <input type="radio" id="sendEmail" name="action" value="email">
+        <label for="sendEmail">Send Email</label>
+      </div>
+      
+    <div id="messageContainer">
+      <label for="messageContent">Message Content:</label>
+      <textarea id="messageContent" rows="4" cols="50"></textarea>
+      <label for="recipientEmail">Recipient's Email:</label>
+      <input type="text" id="recipientEmail">
+    </div>
+
+    <button id="performAction">Perform Action</button>
+  </div>
+  <script src="popup.js"></script>
+</body>
+</html>
