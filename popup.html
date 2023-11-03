@@ -1,52 +1,59 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   <title>Ridge Top Exteriors - Follow-Up Scheduler</title>
   <link rel="stylesheet" type="text/css" href="popup.css">
-  <img src="wisconsinrapids.png" alt="Ridge Top Exteriors Logo" width="100">
+// CSS 
   <style>
     body {
       font-family: 'Arial', sans-serif;
-      background-color: #000;
+      background-color: #ffffff;
       margin: 0;
-      padding: 20px;
+      padding: 0;
       display: flex;
       justify-content: center;
       align-items: center;
-      height: 75vh; /* 75% of the viewport height */
-      overflow: hidden; /* Hide overflow to prevent scrolling */
+      height: 100vh;
+      overflow: hidden;
     }
     .container {
-      width: 100%; /* 100% width */
-      max-width: 1500px; /* Maximum width */
+      width: 100%;
+      max-width: 800px;
       padding: 20px;
       background-color: #fff;
       border-radius: 8px;
       box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+      text-align: center;
+    }
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .logo {
+      max-width: 100%;
+      height: auto;
     }
     h2 {
-      color: #ff0404; /* Red */
-      text-align: center;
-      margin-bottom: 20px;
-    }
-    img {
-      display: block;
-      margin: 0 auto;
-      margin-bottom: 20px;
+      display: none; /* Hide the title */
     }
     .form-group {
       margin: 10px 0;
     }
     label {
-      color: #ff0404; /* Red */
+      color: #ff0404;
       font-weight: bold;
     }
     input[type="date"],
     select,
-    textarea {
+    textarea,
+    input[type="file"],
+    input[type="text"] { /* Add input[type="text"] to target the new text fields */
       width: 100%;
       padding: 10px;
-      border: 1px solid #222222; /* Black */
+      border: 1px solid #222222;
       border-radius: 4px;
       box-sizing: border-box;
       margin-top: 5px;
@@ -57,7 +64,7 @@
       font-weight: normal;
     }
     button {
-      background-color: #ff0404; /* Red */
+      background-color: #ff0404;
       color: #fff;
       border: none;
       border-radius: 4px;
@@ -68,17 +75,163 @@
       width: 100%;
     }
     button:hover {
-      background-color: #1b1b1b; /* Dark Gray */
+      background-color: #1b1b1b;
+    }
+    .drop-zone {
+      border: 2px dashed #ff0404;
+      padding: 20px;
+      text-align: center;
+      cursor: pointer;
+      background-color: #f8f8f8;
+      border-radius: 4px;
+    }
+    .drop-zone p {
+      margin: 0;
+      font-size: 14px;
+      color: #ff0404;
+    }
+    .drop-zone input {
+      display: none;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h2>Ridge Top Exteriors - Follow-Up Scheduler</h2>
+  
+  <style>
+    body {
+      font-family: 'Arial', sans-serif;
+      background-color: #070127;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: row;
+      align-items: flex-start;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .menu {
+      background-color: #ffffff;
+      color: white;
+      width: 200px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .menu-logo {
+      max-width: 100px;
+      height: auto;
+      margin-bottom: 10px;
+    }
+
+    .menu-item {
+      margin: 10px 0;
+    }
+
+    .content {
+      flex: 1;
+      padding: 20px;
+    }
+
+    .content h2 {
+      color: #ff0404;
+    }
+  </style>
+
+  <body>
+    <title AccuLynx Login></title>
+<form id="loginForm">
+  <label for="username">Username:</label>
+  <input type="text" id="username" name="username" required><br>
+  
+  <label for="password">Password:</label>
+  <input type="password" id="password" name="password" required><br>
+  
+  <button type="submit">Log In</button>
+</form>
+</div>
+<script>
+  document.getElementById('loginForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      
+      const username = document.getElementById('username').value;
+      const password = document.getElementById('password').value;
+      
+      // Make a POST request to AccuLynx for authentication
+      axios.post('https://api.acculynx.com/api/v2/users/', {
+          username: username,
+          password: password
+      })
+      .then(response => {
+          // Handle successful login
+          console.log('Logged in successfully:', response.data);
+          
+          // Store the authentication token securely for future requests
+          const authToken = response.data.token;
+          // ... (store it securely)
+          
+          // Fetch user profile data
+          axios.get('https://api.acculynx.com/api/v2/users/', {
+              headers: {
+                  'Authorization': `Bearer ${authToken}`
+              }
+          })
+          .then(profileResponse => {
+              // Display the user profile data
+              const userProfile = document.getElementById('userProfile');
+              const userName = document.getElementById('userName');
+              const userEmail = document.getElementById('userEmail');
+
+              userName.textContent = profileResponse.data.name;
+              userEmail.textContent = profileResponse.data.email;
+
+              userProfile.style.display = 'block';
+          })
+          .catch(profileError => {
+              console.error('Error fetching user profile:', profileError);
+          });
+
+          // Redirect to dashboard or other actions after successful login
+          window.location.href = 'dashboard.html'; // Replace with your dashboard URL
+      })
+      .catch(error => {
+          // Handle login error
+          console.error('Login error:', error);
+          // You can display an error message to the user
+      });
+  });
+</script>
+</body>
+  <div class="menu">
+    <img class="menu-logo" src="wisconsinrapids.png" alt="Ridge Top Exteriors Logo">
+    <div class="menu-item">
+      <label for="bearerToken">Bearer Token:</label>
+      <input type="text" id="bearerToken">
+    </div>
     
-    <img src="wisconsinrapids.png" alt="Ridge Top Exteriors Logo" width="100">
+    <div class="form-group">
+      <label for="calendarId">Calendar ID:</label>
+      <input type="text" id="calendarId" required>
+    </div>
 
     <div class="form-group">
+      <label for="appointmentId">Appointment ID:</label>
+      <input type="text" id="appointmentId" required>
+    </div>
+
+    <div class="menu-item">
+      <button id="getButton">GET</button>
+      <button id="postButton">POST</button>
+  </div>
+  
+    <div class="form-group">
+      <label for="excelFile">Upload Excel Document:</label>
+      <input type="file" id="excelFile" accept=".xlsx">
+    </div>
+
+    <div class.form-group>
       <label for="followUpDate">Select Follow-Up Date:</label>
       <input type="date" id="followUpDate" required>
     </div>
@@ -98,24 +251,87 @@
     </div>
 
     <div class="form-group radio-group">
-        <label>Choose an Action:</label>
-        <input type="radio" id="scheduleFollowUp" name="action" value="follow-up" checked>
-        <label for="scheduleFollowUp">Schedule Follow-Up</label>
-        <input type="radio" id="sendMessage" name="action" value="message">
-        <label for="sendMessage">Send Message</label>
-        <input type="radio" id="sendEmail" name="action" value="email">
-        <label for="sendEmail">Send Email</label>
-      </div>
-      
+      <label>Choose an Action:</label>
+      <input type="radio" id="scheduleFollowUp" name="action" value="follow-up" checked>
+      <label for="scheduleFollowUp">Schedule Follow-Up</label>
+      <input type="radio" id="sendMessage" name="action" value="message">
+      <label for="sendMessage">Send Message</label>
+      <input type="radio" id="sendEmail" name="action" value="email">
+      <label for="sendEmail">Send Email</label>
+    </div>
+
     <div id="messageContainer">
       <label for="messageContent">Message Content:</label>
       <textarea id="messageContent" rows="4" cols="50"></textarea>
       <label for="recipientEmail">Recipient's Email:</label>
       <input type="text" id="recipientEmail">
     </div>
-
+   
+    <div class="form-group">
+      <label for="searchInput">Search AccuLynx:</label>
+      <input type="text" id="searchInput">
+      <button id="searchButton">Search</button>
+    <div>
+    <div id="searchResults">
+      <!-- Display search results here -->
+    </div>  
     <button id="performAction">Perform Action</button>
+
+    <div class="form-group">
+      <div id="drop-zone" class="drop-zone">
+        <p>Drag and drop your Excel file here, or click to select a file.</p>
+        <input type="file" id="file-input" accept=".xlsx">
+      </div>
+    </div>
   </div>
-  <script src="popup.js"></script>
+  <script src="popup.js">// Function to search AccuLynx
+    function searchAccuLynx(query) {
+      const apiKey = 'MWE1OWFhMGEtMjlkYS00MWVmLThiZTYtZmMxNDY4YzVlMGNjN2UzNTg3M2EtMmB9ZC00NWEwLWI4NWMtMWRlN2FlODMxZDk0'; // Replace with your actual API key
+      const apiEndpoint = 'https://api.acculynx.com/api/v2/users/'; // Replace with your API endpoint
+      const searchResultsElement = document.getElementById('searchResults');
+    
+      // Make an API request to perform the search
+      axios.get(`${apiEndpoint}/search?q=${query}`, {
+        headers: {
+          'Authorization': `Bearer ${apiKey}`,
+        },
+      })
+        .then(response => {
+          // Handle the search results
+          const results = response.data;
+    
+          // Clear previous search results
+          searchResultsElement.innerHTML = '';
+    
+          if (results && results.length > 0) {
+            // Display search results
+            results.forEach(result => {
+              const resultItem = document.createElement('div');
+              resultItem.textContent = result.name; // Adjust based on the response structure
+              searchResultsElement.appendChild(resultItem);
+            });
+          } else {
+            // Display a message when no results are found
+            searchResultsElement.textContent = 'No results found.';
+          }
+        })
+        .catch(error => {
+          console.error('Error performing the search:', error);
+          // Display an error message
+          searchResultsElement.textContent = 'Error performing the search.';
+        });
+    }
+    
+    // Add a click event listener to the search button
+    document.getElementById('searchButton').addEventListener('click', function () {
+      const searchInput = document.getElementById('searchInput');
+      const query = searchInput.value;
+    
+      if (query) {
+        searchAccuLynx(query);
+      }
+    });
+    </script>
+
 </body>
 </html>

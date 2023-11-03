@@ -1,25 +1,44 @@
 {
-    "manifest_version": 3,
-    "name": "Ridge Top Exteriors' AccuLynx Follow-Up Scheduler - Intelligent Lead Management",
-    "version": "1.0",
-    "description": "Created by Ridge Top Exteriors (Wisconsin Rapids Office): Automatically schedule follow-up calls in AccuLynx for optimized time management and profitability. The calendar will intelligently schedule follow-ups based on profitability and resource availability.",
-    "permissions": [
-      "activeTab",
-      "storage"
-    ],
-    "content_scripts": [
-      {
-        "matches": ["*://my.acculynx.com/*"],
-        "js": ["content.js"]
-      }
-    ],
-    "action": {
-      "default_popup": "popup.html",
-      "default_icon": {
-        "16": "wisconsinrapids.png",
-        "48": "wisconsinrapids.png",
-        "128": "wisconsinrapids.png"
-      }
+  "manifest_version": 3,
+  "name": "Ridge Top Exteriors' AccuLynx Follow-Up Scheduler - Intelligent Lead Management",
+  "version": "1.0",
+  "description": "Created by Ridge Top Exteriors (Wisconsin Rapids Office): Automatically schedule follow-up calls in AccuLynx for optimized time management and profitability. The calendar will intelligently schedule follow-ups based on profitability and resource availability.",
+  "permissions": [
+    "activeTab",
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "<all_urls>"
+      ],
+      "js": [
+        "content.js"
+      ]
     }
-  }
-  
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "images/wisconsinrapids.png",
+      "48": "images/wisconsinrapids.png",
+      "128": "images/wisconsinrapids.png"
+    }
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "popup.js",
+        "background.js",
+        "popup.css",
+        "wisconsinrapids.png"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ]
+}
