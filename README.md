@@ -49,7 +49,8 @@ To install the Ridge Top Exteriors Chrome Extension, follow these simple steps:
 - **Coder:** Robert Belsha
 ![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/700f0fe7-6855-437d-ab3d-cffd2f39e0e3)
 
-![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/16e0c990-f454-458c-bcbe-a810c6f563ff)
+![image](https://github.com/ridgetopexteriors/acculynxEXT/assets/148669151/5c8fb2e3-351d-426f-a5f6-59397a38cbc4)
+
 
 ## Soon to be added to the extension:
 
